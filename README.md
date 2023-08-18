@@ -66,6 +66,26 @@ Clever Finance Management Tool
     npm start
     ```
 
+### Cleaning up the Database
+
+Over time, you might want to clean up or reset the database of trades. Follow the steps below to do this:
+
+1. **Delete the SQLite Database**:
+
+    - If you're using the default SQLite database, simply delete the `db.sqlite3` file located in the root directory of your project.
+        ```bash
+        rm db.sqlite3
+        ```
+
+2. **Run Migrations Again**:
+
+    - After deleting the SQLite database, you need to recreate the database structure.
+        ```bash
+        python manage.py migrate
+        ```
+
+    Remember to always backup important data before performing destructive operations on the database.
+
 ### Usage
 
 1. **Record Trades**:
