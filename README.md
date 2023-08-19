@@ -88,12 +88,20 @@ Over time, you might want to clean up or reset the database of trades. Follow th
 
 ### Usage
 
-1. **Record Trades**:
+1. **Launch Service**:
+
+    - Launch all services
+        ```bash
+        chmod +x run.sh
+        ./run.sh
+        ```
+
+2. **Record Trades**:
 
     - On the web interface, fill in the details in the form: Symbol, Quantity, Price, Time, and Type (Buy/Sell).
     - Click on "Submit" to record the trade.
 
-2. **View Trades and Open Positions**:
+3. **View Trades and Open Positions**:
     - Below the form, you'll see two tables displaying all recorded trades and netted open positions.
     - Use the "Refresh Data" button to update the tables if needed.
 
