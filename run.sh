@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Start Django server
-cd finance_manager
+cd backend
 pipenv run python manage.py runserver &
 
 # Start React frontend

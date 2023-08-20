@@ -31,7 +31,7 @@ class TradeTable extends Component {
     render() {
         return (
             <div>
-                <h2>Trades</h2>
+                <h2>Trade Table</h2>
                 <table>
                     <thead>
                         <tr>

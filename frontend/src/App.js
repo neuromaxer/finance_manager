@@ -28,7 +28,7 @@ class App extends React.Component {
         axios
             .post("trades/", this.state)
             .then(function (response) {
-                console.log("hello", response);
+                console.log("Post Response:", response);
             })
             .catch(function (error) {
                 console.log(error);
@@ -77,6 +77,7 @@ class App extends React.Component {
                             type="text"
                             name="type"
                             onChange={this.handleChange}
+                            defaultValue={"buy"}
                         >
                             <option value="buy">Buy</option>
                             <option value="sell">Sell</option>
