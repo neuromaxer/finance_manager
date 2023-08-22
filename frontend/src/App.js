@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import TradeTable from "./TradeTable";
+import "./App.css";
 
 class App extends React.Component {
     constructor(props) {
@@ -37,54 +38,60 @@ class App extends React.Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <label>
-                        Symbol:
+            <div className="App-container">
+                <div className="App-form-containter">
+                    <form onSubmit={this.handleSubmit}>
+                        <label>
+                            Symbol:
+                            <input
+                                type="text"
+                                name="symbol"
+                                onChange={this.handleChange}
+                            />
+                        </label>
+                        <label>
+                            Quantity:
+                            <input
+                                type="text"
+                                name="quantity"
+                                onChange={this.handleChange}
+                            />
+                        </label>
+                        <label>
+                            Price:
+                            <input
+                                type="text"
+                                name="price"
+                                onChange={this.handleChange}
+                            />
+                        </label>
+                        <label>
+                            Time:
+                            <input
+                                type="text"
+                                name="time"
+                                onChange={this.handleChange}
+                            />
+                        </label>
+                        <label>
+                            Type:
+                            <select
+                                type="text"
+                                name="type"
+                                onChange={this.handleChange}
+                                defaultValue={"buy"}
+                            >
+                                <option value="buy">Buy</option>
+                                <option value="sell">Sell</option>
+                            </select>
+                        </label>
                         <input
-                            type="text"
-                            name="symbol"
-                            onChange={this.handleChange}
+                            className="App-submit"
+                            value="Submit"
+                            type="submit"
                         />
-                    </label>
-                    <label>
-                        Quantity:
-                        <input
-                            type="text"
-                            name="quantity"
-                            onChange={this.handleChange}
-                        />
-                    </label>
-                    <label>
-                        Price:
-                        <input
-                            type="text"
-                            name="price"
-                            onChange={this.handleChange}
-                        />
-                    </label>
-                    <label>
-                        Time:
-                        <input
-                            type="text"
-                            name="time"
-                            onChange={this.handleChange}
-                        />
-                    </label>
-                    <label>
-                        Type:
-                        <select
-                            type="text"
-                            name="type"
-                            onChange={this.handleChange}
-                            defaultValue={"buy"}
-                        >
-                            <option value="buy">Buy</option>
-                            <option value="sell">Sell</option>
-                        </select>
-                    </label>
-                    <input type="submit" value="Submit" />
-                </form>
+                    </form>
+                </div>
                 <TradeTable />
             </div>
         );
