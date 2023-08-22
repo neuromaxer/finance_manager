@@ -39,59 +39,61 @@ class App extends React.Component {
     render() {
         return (
             <div className="App-container">
-                <div className="App-form-containter">
-                    <form onSubmit={this.handleSubmit}>
-                        <label>
-                            Symbol:
-                            <input
-                                type="text"
-                                name="symbol"
-                                onChange={this.handleChange}
-                            />
-                        </label>
-                        <label>
-                            Quantity:
-                            <input
-                                type="text"
-                                name="quantity"
-                                onChange={this.handleChange}
-                            />
-                        </label>
-                        <label>
-                            Price:
-                            <input
-                                type="text"
-                                name="price"
-                                onChange={this.handleChange}
-                            />
-                        </label>
-                        <label>
-                            Time:
-                            <input
-                                type="text"
-                                name="time"
-                                onChange={this.handleChange}
-                            />
-                        </label>
-                        <label>
-                            Type:
-                            <select
-                                type="text"
-                                name="type"
-                                onChange={this.handleChange}
-                                defaultValue={"buy"}
-                            >
-                                <option value="buy">Buy</option>
-                                <option value="sell">Sell</option>
-                            </select>
-                        </label>
+                <form
+                    className="App-form-container"
+                    onSubmit={this.handleSubmit}
+                >
+                    <label>
+                        Symbol:
                         <input
-                            className="App-submit"
-                            value="Submit"
-                            type="submit"
+                            type="text"
+                            name="symbol"
+                            onChange={this.handleChange}
                         />
-                    </form>
-                </div>
+                    </label>
+                    <label>
+                        Quantity:
+                        <input
+                            type="text"
+                            name="quantity"
+                            onChange={this.handleChange}
+                        />
+                    </label>
+                    <label>
+                        Price:
+                        <input
+                            type="text"
+                            name="price"
+                            onChange={this.handleChange}
+                        />
+                    </label>
+                    <label>
+                        Time:
+                        <input
+                            type="text"
+                            name="time"
+                            onChange={this.handleChange}
+                        />
+                    </label>
+                    <label>
+                        Type:
+                        <select
+                            type="text"
+                            name="type"
+                            onChange={this.handleChange}
+                            defaultValue={"buy"}
+                        >
+                            <option value="buy">Buy</option>
+                            <option value="sell">Sell</option>
+                        </select>
+                    </label>
+                    <input
+                        className="App-submit"
+                        value="Submit"
+                        type="submit"
+                    />
+                </form>
+
                 <TradeTable />
             </div>
         );

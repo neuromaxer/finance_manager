@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "./App.css";
 
 class TradeTable extends Component {
     constructor() {
@@ -31,6 +32,23 @@ class TradeTable extends Component {
     render() {
         return (
             <div>
+                <h2>Open Positions</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Symbol</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.state.openPositions.map((position, index) => (
+                            <tr key={index}>
+                                <td>{position.symbol}</td>
+                                <td>{position.quantity}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
                 <h2>Trade Table</h2>
                 <table>
                     <thead>
@@ -56,25 +74,9 @@ class TradeTable extends Component {
                         ))}
                     </tbody>
                 </table>
-                <h2>Open Positions</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Symbol</th>
-                            <th>Quantity</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.state.openPositions.map((position, index) => (
-                            <tr key={index}>
-                                <td>{position.symbol}</td>
-                                <td>{position.quantity}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-                <h3>Refresh</h3>
-                <button onClick={this.fetchData}>Refresh</button>
+                <button className="App-refresh-button" onClick={this.fetchData}>
+                    Refresh
+                </button>
             </div>
         );
     }
