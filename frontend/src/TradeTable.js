@@ -11,9 +11,9 @@ class TradeTable extends Component {
         };
     }
 
-    // componentDidMount() {
-    //     this.fetchData();
-    // }
+    componentDidMount() {
+        this.fetchData();
+    }
 
     fetchData = () => {
         axios

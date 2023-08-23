@@ -16,6 +16,8 @@ class App extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+
+        this.tradeTableRef = React.createRef();
     }
 
     handleChange(event) {
@@ -28,8 +30,9 @@ class App extends React.Component {
 
         axios
             .post("trades/", this.state)
-            .then(function (response) {
+            .then((response) => {
                 console.log("Post Response:", response);
+                this.tradeTableRef.current.fetchData();
             })
             .catch(function (error) {
                 console.log(error);
@@ -94,7 +97,7 @@ class App extends React.Component {
                     />
                 </form>
 
-                <TradeTable />
+                <TradeTable ref={this.tradeTableRef} />
             </div>
         );
     }
